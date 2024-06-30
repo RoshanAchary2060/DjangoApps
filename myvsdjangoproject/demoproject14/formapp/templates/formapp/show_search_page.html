@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+</head>
+<body>
+    <h2>Book Search Page</h2>
+    {% if error %}
+    <h3 style='color:red'>Please input subject!</h3>
+    {% endif %}
+    <form action="/findbooks/" method="get" >
+        <strong>Enter subject:</strong>
+        <input type="text" name="subject"><br>
+        <input type="submit" value="Find Books">
+    </form>
+</body>
+</html>

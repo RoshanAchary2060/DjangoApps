@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Book Search Form</title>
+    <style>
+      h3.h3 {
+        color:red
+      }
+    </style>
+  </head>
+  <body>
+    {% if size %}
+    <h3 class="h3">Please enter subject with less than or euqal to 10 characters</h3>
+    <h3>
+    {% elif error %}
+      <h3 class="h3">Please search some book!</h3>
+    {% endif %}
+    <form action="/show/" method="get">
+      <label for="name">Enter Subject Name:</label>
+      <input type="text" name="subject" id="name" />
+      <br />
+      <button>Search</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books Display Page</title>
+  </head>
+  <body>
+    <h2>Following are the book details:</h2>
+    <table border="2">
+      <tr>
+        <th>BookId</th>
+        <th>BookName</th>
+        <th>BookPrice</th>
+        <th>Subject</th>
+        <th>PubDate</th>
+      </tr>
+      {% for b in booklist %}
+      <tr>
+        <td>{{b.book_id}}</td>
+        <td>{{b.book_name}}</td>
+        <td>{{b.book_price}}</td>
+        <td>{{b.subject}}</td>
+        <td>{{b.pub_date}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

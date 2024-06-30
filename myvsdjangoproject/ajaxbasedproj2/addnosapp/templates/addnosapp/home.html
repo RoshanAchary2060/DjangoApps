@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <script>
+      var ajaxreq = new XMLHttpRequest();
+      let fno = "",
+        sno = "";
+      function validate() {
+        fno = document.querySelector("#fno").value;
+        sno = document.querySelector("#sno").value;
+        if (fno == "" || sno == "") {
+          return false;
+        }
+        return true;
+      }
+      function show() {
+        if (!validate()) {
+          alert("Please input nos!");
+          return;
+        }
+        ajaxreq.onreadystatechange = processresponse;
+        let reqstr = "addnos?firstnum=" + fno + "&secnum=" + sno;
+        ajaxreq.open("GET", reqstr, true);
+        ajaxreq.send(null);
+      }
+      function processresponse() {
+        if (ajaxreq.readyState == 4) {
+          let res = document.querySelector("#result");
+          res.innerHTML = ajaxreq.responseText;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>First No:</th>
+        <td><input type="text" id="fno" /></td>
+      </tr>
+      <tr>
+        <th>Second No:</th>
+        <td><input type="text" id="sno" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="Add Nos" onclick="show()" /></td>
+      </tr>
+    </table>
+    <div id="result"></div>
+  </body>
+</html>

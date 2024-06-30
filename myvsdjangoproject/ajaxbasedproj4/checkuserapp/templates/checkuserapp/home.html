@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <script type="text/javascript">
+      let ajaxreq;
+      let ename;
+      function validate() {
+        ename = document.getElementById("username").value;
+        if (ename == "") {
+          return false;
+        }
+        return true;
+      }
+      function check() {
+        if (!validate()) {
+          alert("Please input username!");
+          return;
+        }
+        ajaxreq = new XMLHttpRequest();
+        ajaxreq.onreadystatechange = processresponse;
+        let uname = document.getElementById("username").value;
+        let reqstr = "checkuser?username=" + uname;
+        ajaxreq.open("GET", reqstr, true);
+        ajaxreq.send(null);
+      }
+      function processresponse() {
+        if (ajaxreq.readyState == 4) {
+          let sp1 = document.getElementById("result");
+          let ans = ajaxreq.responseText;
+          if (ans.trim() == "pass") {
+            sp1.innerHTML = "Username available";
+            sp1.style.color = "green";
+          } else {
+            sp1.innerHTML = "Username not available";
+            sp1.style.color = "red";
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <b>Enter Desired Username:</b
+      ><input type="text" id="username" onblur="check()" /><span
+        id="result"
+      ></span>
+    </center>
+  </body>
+</html>

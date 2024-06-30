@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% for c in courses %} {{forloop.counter}} : {{c}}<br />
+    {% empty %} No courses found! {% endfor %}<br />
+    {% for c in courses %} {{forloop.counter0}} : {{c}}<br />
+    {% empty %} No courses found! {% endfor %}<br />
+    {% for c in courses %} {{forloop.revcounter}} : {{c}}<br />
+    {% empty %} No courses found! {% endfor %}<br />
+    {% for c in courses %} {{forloop.revcounter0}} : {{c}}<br />
+    {% empty %} No courses found! {% endfor %}<br />
+    {% for c in courses %} {{forloop.first}} : {{c}}<br />
+    {% empty %} No courses found! {% endfor %}<br />
+    {% for c in courses %} {{forloop.last}} : {{c}}<br />
+    {% empty %} No courses found! {% endfor %}<br />
+    {% for c in courses %} {{c}}{% if forloop.last == False%}, {% endif%}
+    {%endfor%}
+  </body>
+</html>

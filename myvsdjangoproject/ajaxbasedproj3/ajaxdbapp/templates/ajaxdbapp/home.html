@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ajax DB</title>
+    <script>
+      let ajaxreq;
+      let ename;
+      function validate() {
+        ename = document.querySelector("#empname").value;
+        if (ename == "") {
+          return false;
+        }
+        return true;
+      }
+      function getdata() {
+        if (!validate()) {
+          alert("Please enter name!");
+          return;
+        }
+        ajaxreq = new XMLHttpRequest();
+        ajaxreq.onreadystatechange = processresponse;
+        let reqstr = "getsal?name=" + ename;
+        ajaxreq.open("GET", reqstr, true);
+        ajaxreq.send(null);
+      }
+      function processresponse() {
+        if (ajaxreq.readyState == 4) {
+          let sp1 = document.querySelector("#data");
+          sp1.innerHTML = ajaxreq.responseText;
+        }
+      }
+    </script>
+  </head>
+  <body bgcolor="#ff8888">
+    <center>
+      <b>Enter employee name:</b>
+      <input type="text" id="empname" />
+      <br />
+      <input type="button" value="Show Salary" onclick="getdata()" />
+      <span id="data"></span>
+    </center>
+  </body>
+</html>

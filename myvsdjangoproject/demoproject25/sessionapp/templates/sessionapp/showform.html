@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Form</title>
+</head>
+<body>
+    <h2>Fill Form Data</h2>
+    <form action="/display/" method='GET'>
+        <table>
+            {{ form.as_table  }}
+            <tr><td><input type="submit" value="Click me"></td></tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <script src="{% static 'js/app.js' %}"></script>
+    <link
+      rel="stylesheet"
+      href="{% static 'css/mystyles.css' %}"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <h2>This is Lord Ram Image</h2>
+    <p></p>
+    <img src="{% static 'images/ram.jpg' %}" alt="ram image" /><br />
+    <input type="button" value="Click me" onclick="showDate()" />
+  </body>
+</html>

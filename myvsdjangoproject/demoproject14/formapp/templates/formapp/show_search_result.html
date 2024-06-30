@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+</head>
+<body>
+    <h2>Following are the results</h2>
+    Total books found : {{ booklist|length }}<br>
+    {% if booklist|length > 0   %}
+    <table border="2">
+    <tr><th>BookName</th><th>BookPrice</th></tr>
+    {% for b in booklist %}
+    <tr><td>{{ b.book_name }}</td><td>{{ b.book_price }}</td></tr>
+    {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>

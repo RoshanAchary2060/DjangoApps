@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database Demo</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>Book Details</h1>
+    {% if error %}
+    <h2>Sorry! could not connect to DB!</h2>
+    <h2>Error is {{error}}</h2>
+    {% else %}
+    <table border="1">
+      <tr>
+        <th>Book No</th>
+        <th>Book Name</th>
+        <th>Book Price</th>
+      </tr>
+      {% for b in records %}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{b.bookname}}</td>
+        <td>{{b.bookprice}}</td>
+      </tr>
+
+      {% endfor %}
+    </table>
+    {% endif %}
+  </body>
+</html>

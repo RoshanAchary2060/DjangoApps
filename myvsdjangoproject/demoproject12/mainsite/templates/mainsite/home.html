@@ -1,0 +1,7 @@
+{% extends "mainsite/base.html" %}
+{% block title %}Home Page{% endblock title %}
+{% block ptitle %}My Home Page{% endblock ptitle %}
+{% block listitems %}
+<p>Welcome to SCA Home page</p>
+{% include 'mainsite/popular.html' with course1='Hibernate' %}
+{% endblock listitems %}

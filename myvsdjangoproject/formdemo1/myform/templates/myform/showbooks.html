@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Books</title>
+    <style>
+      h4 {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>You searched for subject : {{query}}</h3>
+    {% if books|length != 0 %} <h3>Total number of books fetched :
+    {{books|length}}
+    <ul>
+      {% for book in books%}
+      <li>{{book.book_name}}, {{book.book_price}}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <h4>No books found!</h4>
+    {% endif %}
+  </body>
+</html>

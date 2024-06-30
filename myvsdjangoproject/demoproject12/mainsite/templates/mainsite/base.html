@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock title %}</title>
+    {% block basecss %}
+    <link rel="stylesheet" href="{% static 'mainsite/css/main.css' %}">
+    {% endblock basecss %}
+    
+  </head>
+  <body>
+    <nav>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'aboutsca' %}">About</a>
+      <a href="{% url 'courselist' %}">Courses</a>
+      <a href="{% url 'trainerslist' %}">Trainers</a>
+    </nav>
+    <img src="{% static 'mainsite/images/examination.png' %}" alt="">
+    <h2>Welcome To Sharma Computer Academy</h2>
+    <h3>{% block ptitle %}{% endblock ptitle %}</h3>
+    {% block listitems %}
+    <ul></ul>
+    {% endblock listitems %}
+    <h4>
+      {% block footer %} All rights reserved &copy; SCA 2020 {% endblock footer%}
+    </h4>
+  </body>
+</html>

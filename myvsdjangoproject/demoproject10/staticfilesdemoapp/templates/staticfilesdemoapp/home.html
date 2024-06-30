@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static At App Level</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'staticfilesdemoapp/css/mystyles.css'%}"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <h2>Welcome to my home page</h2>
+    <img
+      src="{% static 'staticfilesdemoapp/images/facebook.jpg' %}"
+      alt="facebook logo"
+    />
+  </body>
+</html>

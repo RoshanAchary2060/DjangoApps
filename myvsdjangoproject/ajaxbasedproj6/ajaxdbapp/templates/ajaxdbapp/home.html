@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      let ajaxreq;
+      function getdata() {
+        ajaxreq = new XMLHttpRequest();
+        ajaxreq.onreadystatechange = processresponse;
+        let empno = document.getElementById("empid").value;
+        let reqstr = "getempdetails?eno=" + empno;
+        ajaxreq.open("GET", reqstr, true);
+        ajaxreq.send(null);
+      }
+      function processresponse() {
+        if (ajaxreq.readyState == 4) {
+          let res = document.getElementById("result");
+          let ans = ajaxreq.responseText;
+          res.innerHTML = ans;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <b>Select employee ID:</b>
+      <select id="empid" onchange="getdata()">
+        {% for eno in emp_list %}
+        <option value={{ eno }}>{{ eno }}</option>
+        {% endfor %}
+      </select>
+      <div id="result"></div>
+    </center>
+  </body>
+</html>

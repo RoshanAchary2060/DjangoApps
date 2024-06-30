@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        .errorlist {
+            list-style-type: none;
+            color: crimson;
+            margin: 0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    {% if regform.errors %}
+    <p style="color:crimson">
+        Please remove following errors from your form
+    </p>
+    {% endif %}
+    {% if success %}
+    <p style="color:limegreen">
+        Thank you {{username}} for registering with us...
+    </p>
+    {% endif %}
+    <h2>Sign Up With Us...</h2>
+    <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        <table>
+        {% for item in regform %}
+        <tr>
+            <th>{{ item.label_tag }}</th>
+            <td>{{ item }}</td>
+            <td>{{ item.errors }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+        <input type="submit" value="Register me">
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hit Counter</title>
+  </head>
+  <body>
+    <h2>Visit Counter</h2>
+    {% if visits %} {% if visits == 1 %}
+    <h3>Welcome Newcomer!</h3>
+    <h4>Hope to see you again!</h4>
+    {% else %}
+    <h3>Welcome Back!</h3>
+    <h4>It seems you are enjoying surfing!</h4>
+    {% endif %}
+    <p>This is your visit no {{visits}}</p>
+    <p>Click <a href="/stop">here</a> to stop tracking</p>
+    {% else %}
+    <h3>Welcome To Our Site</h3>
+    <h4>Be assured! We are not tracking you!</h4>
+    {% endif %}
+  </body>
+</html>

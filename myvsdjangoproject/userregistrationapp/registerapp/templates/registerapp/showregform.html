@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+    .errorlist{
+        color: crimson;
+        list-style-type: none;
+        margin:0;
+        padding:0;
+    }
+    </style>
+</head>
+<body>
+       {% if form.errors %}
+       <p style='color: crimson'>
+        Please correct the following errors!
+       </p>       
+       {% endif %}
+       {% if success %}
+        <p style='color: limegreen'>
+        Thank you {{ username }} ! for registering with us<br>
+        Please <a href='/login/'>login </a> to access your account 
+       </p>        
+       {% endif %}
+    <h3>Sign Up!</h3>
+    <form action="" method="POST" novalidate>
+    {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type='submit' value='Sign Up' >
+    </form>
+</body>
+</html>

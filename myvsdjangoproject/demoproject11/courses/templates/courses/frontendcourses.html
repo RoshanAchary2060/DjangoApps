@@ -1,0 +1,16 @@
+{% extends "mainsite/base.html" %}
+{% block title %}Front-End Courses{% endblock title %}
+{% block basecss %}
+{% load static %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'courses/css/coursesstyles.css' %}">
+{% endblock basecss %}
+{% block ptitle %}Our Front-End Courses{% endblock ptitle %}
+{% block listitems %}
+<li>HTML 5</li>
+<li>CSS 3</li>
+<li>Modern JavaScript</li>
+<li>BootStrap</li>
+<li>JQuery</li>
+<li>Ajax</li>
+{% endblock listitems %}

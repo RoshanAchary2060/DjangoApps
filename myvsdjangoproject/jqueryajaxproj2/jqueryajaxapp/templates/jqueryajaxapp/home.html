@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <title>JQuery AJAX Example</title>
+    <script src="{% static 'jqueryajaxapp/js/jquery.js' %}"></script>
+    <script src="{% static 'jqueryajaxapp/js/getdate.js' %}"></script>
+  </head>
+  <body>
+    <center>
+      <h2>Click the button to receive the date from the server</h2>
+      <input
+        type="button"
+        value="Show Date"
+        onclick="showDate()"
+        name=""
+        id=""
+      /> <br>
+      <span id="currentdate"></span>
+    </center>
+  </body>
+</html>
